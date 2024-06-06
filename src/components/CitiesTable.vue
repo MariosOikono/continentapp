@@ -35,7 +35,8 @@ export default {
 .cities-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 100px;
+  margin-left: 250px;
 }
 
 .cities-table th,

@@ -74,6 +74,8 @@ export default {
       ]);
       this.cities = cities;
       this.continents = continents;
+      continents.sort((a, b) => a.name.localeCompare(b.name));
+      //users.sort((a, b) => a.firstname.localeCompare(b.firstname))
     } catch (error) {
       console.error("Error fetching data:", error);
     }
