@@ -17,7 +17,6 @@
       @change="filterByContinent"
     ></v-select> -->
     <v-select
-      v-if="continents.length > 0"
       label="Select"
       :items="continents"
       item-text="name"
