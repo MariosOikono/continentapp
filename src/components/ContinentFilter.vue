@@ -1,6 +1,6 @@
 <template>
   <div class="continent-filter">
-    <label for="continent">Continent:</label>
+    <!-- <label for="continent">Continent:</label>
     <select id="continent" @change="filterByContinent">
       <option value="">All</option>
       <option
@@ -10,7 +10,19 @@
       >
         {{ continent.name }}
       </option>
-    </select>
+    </select> -->
+    <!-- <v-select
+      label="Select"
+      v-model="continentFilter"
+      @change="filterByContinent"
+    ></v-select> -->
+    <v-select
+      v-if="continents.length > 0"
+      label="Select"
+      :items="continents"
+      item-text="name"
+      item-value="id"
+    ></v-select>
   </div>
 </template>
 
@@ -22,6 +34,9 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  mounted: function () {
+    console.log(this.$props);
   },
   methods: {
     filterByContinent(event) {
