@@ -17,10 +17,12 @@
       @change="filterByContinent"
     ></v-select> -->
     <v-select
+      v-model="selectedContinent"
       label="Select"
       :items="continents"
       item-text="name"
       item-value="id"
+      @change="filterByContinent"
     ></v-select>
   </div>
 </template>
@@ -28,6 +30,11 @@
 <script>
 export default {
   name: "ContinentFilter",
+  data() {
+    return {
+      selectedContinent: "",
+    };
+  },
   props: {
     continents: {
       type: Array,
@@ -38,8 +45,8 @@ export default {
     console.log(this.$props);
   },
   methods: {
-    filterByContinent(event) {
-      this.$emit("filter-continent", event.target.value);
+    filterByContinent() {
+      this.$emit("filter-continent", this.selectedContinent);
     },
   },
 };
